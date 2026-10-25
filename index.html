@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibrant Neomorphic Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Subtle Background Particles -->
+    <ul class="particles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <!-- Floating Decorative Icons -->
+    <div class="floating-icon icon-1">❓</div>
+    <div class="floating-icon icon-2">💡</div>
+    
+    <div class="quiz-container">
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen active">
+            <div class="clay-icon">🚀</div>
+            <h1>Quiz App</h1>
+            <div class="glass-badge high-score-badge">Best Score: <span id="start-high-score">0</span> 🌟</div>
+            <p>Ready to test your knowledge?</p>
+            <button id="start-btn" class="btn clay-btn">Start Quiz</button>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="screen">
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+
+            <div class="header">
+                <div class="glass-badge" id="score-tracker">Score: 0 🏆</div>
+                <div class="glass-badge timer-badge" id="timer">15s</div>
+            </div>
+            
+            <div class="question-card">
+                <span class="q-tracker" id="question-tracker">Q: 1/3</span>
+                <h2 id="question-text">Question goes here?</h2>
+            </div>
+
+            <div id="options-container" class="options">
+                <!-- Options will be injected here -->
+            </div>
+            <button id="next-btn" class="btn clay-btn hidden">Next Question</button>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="screen">
+            <div class="clay-icon">🎉</div>
+            <h2 id="result-title">Quiz Completed!</h2>
+            <div class="glass-badge high-score-badge">Best Score: <span id="result-high-score">0</span> 🌟</div>
+            <p class="final-text" id="final-text">Your Final Score</p>
+            <div class="score-display" id="final-score">0 / 3</div>
+            <button id="restart-btn" class="btn clay-btn">Play Again</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

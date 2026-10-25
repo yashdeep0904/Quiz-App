@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    color: #fff;
+    position: relative;
+}
+
+/* --- Subtle Particle Animations --- */
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.particles li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animateParticles 25s linear infinite;
+    bottom: -150px;
+    border-radius: 50%;
+}
+
+.particles li:nth-child(1) { left: 25%; width: 80px; height: 80px; animation-delay: 0s; }
+.particles li:nth-child(2) { left: 10%; width: 20px; height: 20px; animation-delay: 2s; animation-duration: 12s; }
+.particles li:nth-child(3) { left: 70%; width: 20px; height: 20px; animation-delay: 4s; }
+.particles li:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-delay: 0s; animation-duration: 18s; }
+.particles li:nth-child(5) { left: 65%; width: 20px; height: 20px; animation-delay: 0s; }
+.particles li:nth-child(6) { left: 75%; width: 110px; height: 110px; animation-delay: 3s; }
+.particles li:nth-child(7) { left: 35%; width: 150px; height: 150px; animation-delay: 7s; }
+.particles li:nth-child(8) { left: 50%; width: 25px; height: 25px; animation-delay: 15s; animation-duration: 45s; }
+.particles li:nth-child(9) { left: 20%; width: 15px; height: 15px; animation-delay: 2s; animation-duration: 35s; }
+.particles li:nth-child(10) { left: 85%; width: 150px; height: 150px; animation-delay: 0s; animation-duration: 11s; }
+
+@keyframes animateParticles {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; border-radius: 20%; }
+    100% { transform: translateY(-1000px) rotate(720deg); opacity: 0; border-radius: 50%; }
+}
+
+/* Floating Decorative Icons */
+.floating-icon {
+    position: absolute;
+    font-size: 80px;
+    filter: drop-shadow(0 20px 15px rgba(0,0,0,0.2));
+    animation: float 6s ease-in-out infinite;
+    z-index: 5;
+}
+.icon-1 { top: 15%; left: 20%; animation-delay: 0s; transform: rotate(-15deg); }
+.icon-2 { bottom: 15%; right: 20%; animation-delay: -3s; transform: rotate(15deg); font-size: 100px; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-15deg); }
+    50% { transform: translateY(-30px) rotate(5deg); }
+}
+
+/* Main Container (Vibrant Gradient Card) */
+.quiz-container {
+    position: relative;
+    z-index: 10;
+    background: linear-gradient(135deg, #8A2387, #E94057, #F27121);
+    width: 100%;
+    max-width: 450px;
+    border-radius: 40px;
+    padding: 40px 30px;
+    box-shadow: 
+        -10px -10px 30px rgba(255, 255, 255, 0.5),
+        20px 20px 40px rgba(0, 0, 0, 0.2),
+        inset -5px -5px 15px rgba(0, 0, 0, 0.1),
+        inset 5px 5px 15px rgba(255, 255, 255, 0.4);
+    transition: all 0.3s ease;
+}
+
+.screen {
+    display: none;
+    text-align: center;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+.screen.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Progress Bar */
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.progress-bar {
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    transition: width 1s linear, background-color 0.3s ease; 
+}
+
+.clay-icon {
+    font-size: 70px;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 15px 10px rgba(0,0,0,0.2));
+}
+
+h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    text-shadow: 2px 4px 10px rgba(0,0,0,0.2);
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* Glassmorphism Badges */
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.glass-badge {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 800;
+    font-size: 1rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.high-score-badge {
+    display: inline-block;
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+    padding: 8px 15px;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.timer-badge {
+    background: rgba(255, 255, 255, 0.9);
+    color: #E94057;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+/* Question Area */
+.question-card {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border-radius: 25px;
+    margin-bottom: 25px;
+    box-shadow: inset 2px 2px 10px rgba(255,255,255,0.2);
+}
+
+.q-tracker {
+    display: block;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.4;
+    text-shadow: 1px 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Neomorphic/Clay Options */
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.option-btn {
+    flex: 1 1 45%;
+    background: rgba(255, 255, 255, 0.85);
+    color: #333;
+    border: none;
+    padding: 18px 15px;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 
+        4px 4px 10px rgba(0, 0, 0, 0.15),
+        -4px -4px 10px rgba(255, 255, 255, 0.2),
+        inset 2px 2px 5px rgba(255, 255, 255, 0.8),
+        inset -2px -2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.option-btn:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 
+        6px 8px 15px rgba(0, 0, 0, 0.2),
+        inset 2px 2px 5px rgba(255, 255, 255, 0.9);
+}
+
+.option-btn:active:not(:disabled) {
+    transform: scale(0.95);
+    box-shadow: 
+        inset 4px 4px 10px rgba(0,0,0,0.1),
+        inset -4px -4px 10px rgba(255,255,255,0.8);
+}
+
+/* State Colors */
+.option-btn.correct {
+    background: #00d281;
+    color: white;
+    box-shadow: inset 2px 2px 8px rgba(255,255,255,0.4), 0 5px 15px rgba(0, 210, 129, 0.4);
+}
+
+.option-btn.wrong {
+    background: #ff4757;
+    color: white;
+    box-shadow: inset 2px 2px 8px rgba(255,255,255,0.4), 0 5px 15px rgba(255, 71, 87, 0.4);
+}
+
+.option-btn:disabled {
+    cursor: not-allowed;
+}
+
+/* Primary Action Buttons */
+.clay-btn {
+    width: 100%;
+    background: #fff;
+    color: #E94057;
+    border: none;
+    padding: 18px;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 
+        0 10px 20px rgba(0,0,0,0.15),
+        inset 3px 3px 5px rgba(255,255,255,0.8),
+        inset -3px -3px 5px rgba(0,0,0,0.1);
+    transition: 0.2s;
+}
+
+.clay-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2), inset 3px 3px 5px rgba(255,255,255,0.9);
+}
+
+.clay-btn:active {
+    transform: scale(0.96);
+    box-shadow: inset 3px 3px 10px rgba(0,0,0,0.1);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Final Score Styling */
+.score-display {
+    background: rgba(255,255,255,0.2);
+    border: 2px solid rgba(255,255,255,0.4);
+    padding: 20px;
+    font-size: 3rem;
+    font-weight: 800;
+    border-radius: 30px;
+    margin: 0 auto 30px auto;
+    width: fit-content;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.new-high-score {
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    animation: pop 0.5s ease;
+}
+
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
